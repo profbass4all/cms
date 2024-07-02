@@ -60,6 +60,22 @@ const users =[
         noOfArticles: 0,
         avatar: 'image',
     },
+    {
+        firstName: 'Bayo',
+        lastName: 'Bakare',
+        userId: 4,
+        dob: '12/06/1990',
+        stateOfOrigin: 'Kwara',
+        role: 'user',
+        phoneNo: '08102024480',
+        password: 'sheriprinkle',
+        confirmPassword: 'sheriprinkle',
+        maritalStatus: 'single',
+        qualification: 'undergraduate',
+        articles: [],
+        noOfArticles: 0,
+        avatar: 'image',
+    },
 ]
 //endpoint to create user using joi to validate the input
 app.post('/api/user', (request, response)=>{
