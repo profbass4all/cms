@@ -9,7 +9,7 @@ There are various api endpoints available in this project, all of which will be 
 create a user
 POST - "/api/user"
 
-request 
+Sample request 
 {
   "firstName": "rew",
   "lastName": "Khawthar",
@@ -18,7 +18,7 @@ request
   "confirmPassword":"mypassword" 
 }
 
-response (status 200)
+Sample response (status 200)
 {
       "firstName": "rew",
       "lastName": "Khawthar",
@@ -35,3 +35,29 @@ response (status 200)
       "noOfArticles": 0,
       "avatar": null
     }
+
+get a single user
+GET - '/api/user/:userId'
+
+Sample request - /api/user/2
+Sample response (status 200)
+{
+  "message": "Successfull",
+  "status": true,
+  "data": {
+    "firstName": "Barakat",
+    "lastName": "Asunke",
+    "userId": 2,
+    "dob": "12/06/1990",
+    "stateOfOrigin": "osun",
+    "role": "user",
+    "phoneNo": "08112023380",
+    "password": "sheriprinkle",
+    "confirmPassword": "sheriprinkle",
+    "maritalStatus": "married",
+    "qualification": "ssce",
+    "articles": [],
+    "noOfArticles": 0,
+    "avatar": "image"
+  }
+}
