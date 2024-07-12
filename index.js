@@ -153,8 +153,10 @@ app.get('/api/users', (request, response) =>{
         console.log(request.query)
 
     if(!firstName && !currentRole){
+        
         mysqlConnection.query({
-            sql: `SELECT u.userId, u.firstName, u.lastName, u.currentRole, u.noOfArticles, a.title, a.category, a.dateOfPosting FROM users u join articles as a on u.userId = a.userId`
+            // sql: `SELECT u.userId, u.firstName, u.lastName, u.currentRole, u.noOfArticles, a.title, a.category, a.dateOfPosting FROM users as u join articles as a on u.userId = a.userId`
+            sql: `SELECT * FROM users`
         },
         (err, result, fields)=>{
             if(err){
@@ -178,7 +180,8 @@ app.get('/api/users', (request, response) =>{
         key = key.slice(0,-4)
         console.log(key)
         mysqlConnection.query({
-        sql: `SELECT u.userId, u.firstName, u.lastName, u.currentRole, u.noOfArticles, a.title, a.category, a.dateOfPosting FROM users u join articles as a on u.userId = a.userId WHERE ${key}`,
+        // sql: `SELECT u.userId, u.firstName, u.lastName, u.currentRole, u.noOfArticles, a.title, a.category, a.dateOfPosting FROM users u join articles as a on u.userId = a.userId WHERE ${key}`,
+        sql: `SELECT * FROM users WHERE ${key}`,
         values: [...val]
         },
         (err, result, fields)=>{
