@@ -15,5 +15,6 @@
       "password": "root",
       "connectionTimeout": 30
     }
-  ]
+  ],
+  "mdb.confirmRunAll": false
 }
